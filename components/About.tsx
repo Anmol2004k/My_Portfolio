@@ -72,7 +72,7 @@ const About: React.FC = () => {
           >
             <h2 className="text-4xl font-bold mb-6">About <span className="text-blue-500">Me</span></h2>
             <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-              I am a passionate Full Stack Developer with over 4 years of experience building 
+              I am a passionate Full Stack Developer with over 3 years of experience building 
               high-performance web applications. My mindset is centered around 
               <span className="text-white font-medium"> clean code, scalability, and user-centric design</span>.
             </p>
