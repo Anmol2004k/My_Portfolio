@@ -92,11 +92,11 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Name</label>
-                  <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="John" />
+                  <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your_Name" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Email</label>
-                  <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="john@doe.com" />
+                  <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="YourEmail@gmail.com" />
                 </div>
               </div>
               <div>
