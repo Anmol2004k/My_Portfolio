@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import HireMe from './components/HireMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const App: React.FC = () => {
   return (

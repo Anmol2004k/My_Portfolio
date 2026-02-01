@@ -3,10 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import aboutImage from '../Assets/images/Dev.jpg';
 
-
-
-
-
 const FloatingIcon = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
   <motion.div
     animate={{
