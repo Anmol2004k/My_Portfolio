@@ -30,6 +30,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
+      <SpeedInsights />
     </div>
   );
 };
