@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
         </p>
         <div className="flex gap-6">
           <a href="https://github.com/Anmol2004k" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
-          <a href="#" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
-          <a href="#" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Twitter</a>
+          <a href="https://www.linkedin.com/in/anmolkumar2028" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://x.com/Anmol_thaakur" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Twitter</a>
         </div>
       </div>
     </footer>
