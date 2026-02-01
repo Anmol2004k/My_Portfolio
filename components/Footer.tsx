@@ -12,9 +12,9 @@ const Footer: React.FC = () => {
           &copy; {new Date().getFullYear()}  Anmol's ,Portfolio. Built with React & Framer Motion.
         </p>
         <div className="flex gap-6">
-          <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
-          <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
-          <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Twitter</a>
+          <a href="https://github.com/Anmol2004k" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
+          <a href="#" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
+          <a href="#" target='_blank' rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Twitter</a>
         </div>
       </div>
     </footer>
