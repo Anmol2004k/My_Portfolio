@@ -1,6 +1,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import aboutImage from '../Assets/images/Dev.jpg';
+
+
+
+
 
 const FloatingIcon = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
   <motion.div
@@ -42,8 +47,8 @@ const About: React.FC = () => {
               {/* Image Circle */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-800 shadow-[0_0_50px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_60px_rgba(59,130,246,0.4)] transition-all duration-500">
                 <img 
-                  src="https://picsum.photos/800/800?random=42" 
-                  alt="Developer Portrait" 
+                    src={aboutImage} 
+                  alt="Anmol | Full Stack Developer" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
