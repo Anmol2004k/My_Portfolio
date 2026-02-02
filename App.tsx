@@ -9,6 +9,7 @@ import HireMe from './components/HireMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react"
 
 const App: React.FC = () => {
   return (
@@ -30,6 +31,9 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
+      {/* ✅ Vercel Analytics & Speed Insights */}
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 };
