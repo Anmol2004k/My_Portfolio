@@ -1,38 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 
-
-// socialLinks array yaha waisa hi rahega jaisa aapne diya hai...
-
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  // Formspree Hook (Apni ID yaha 'YOUR_FORM_ID' ki jagah dalein)
+  const [state, handleSubmit] = useForm("xwvnprok");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-
-    try {
-      const response = await fetch("https://formspree.io", { // <-- APNA ID YAHA DALO
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setStatus('idle'), 4000);
-      } else {
-        setStatus('error');
-        setTimeout(() => setStatus('idle'), 3000);
-      }
-    } catch (error) {
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
-    }
-  };
+  if (state.succeeded) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <motion.p 
+          initial={{ opacity: 0, scale: 0.9 }} 
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-2xl font-bold text-green-600"
+        >
+          Thanks for joining! I'll get back to you soon.
+        </motion.p>
+      </div>
+    );
+  }
 
   return (
     <section id="contact" className="py-24 px-6 bg-white dark:bg-gray-950">
@@ -50,6 +36,7 @@ const Contact: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          {/* Left Side: Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -90,6 +77,7 @@ const Contact: React.FC = () => {
             </div>
           </motion.div>
 
+          {/* Right Side: Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -99,31 +87,35 @@ const Contact: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Name</label>
-                  <input name="name" type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your_Name" />
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Name</label>
+                  <input id="name" name="name" type="text" required className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your Name" />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Email</label>
-                  <input name="email" type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="YourEmail@gmail.com" />
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Email</label>
+                  <input id="email" name="email" type="email" required className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="YourEmail@gmail.com" />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Message</label>
-                <textarea name="message" required rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors resize-none" placeholder="Let's build something cool..." />
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Message</label>
+                <textarea id="message" name="message" required rows={4} className="w-full bg-white dark:bg-gray-950 border border-gray-300 dark:border-gray-800 rounded-xl px-4 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors resize-none" placeholder="Let's build something cool..." />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
-              <button type="submit" disabled={status !== 'idle'} className={`w-full py-4 rounded-xl font-bold text-white transition-all flex items-center justify-center gap-2 ${status === 'success' ? 'bg-green-600' : status === 'error' ? 'bg-red-600' : 'bg-blue-600 hover:bg-blue-700 active:scale-95'}`}>
-                {status === 'idle' && 'Send Message'}
-                {status === 'sending' && <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full" />}
-                {status === 'success' && 'Success!'}
-                {status === 'error' && 'Error!'}
+              <button 
+                type="submit" 
+                disabled={state.submitting} 
+                className="w-full py-4 rounded-xl font-bold text-white transition-all flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-95 disabled:bg-gray-400"
+              >
+                {state.submitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.div>
         </div>
-
-        {/* Social Grid (Keep your existing social mapping code here) */}
-        {/* ... */}
       </div>
     </section>
   );
 };
+
+// YEH LINE SABSE IMPORTANT HAI
+export default Contact;
