@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright Text */}
         <p className="text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Anmol's Portfolio. Built with React & Framer Motion.
+          &copy; {new Date().getFullYear()} Built by Anmol Kumar.
         </p>
 
         {/* Social Icons Section */}

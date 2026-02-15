@@ -4,28 +4,36 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
-    title: "Nova Dashboard",
-    description: "A real-time data visualization platform built with Next.js and D3.js.",
+    title: "The-Creation-Edit",
+    description: "A responsive website for An Editing Agency,built with React and Tailwind CSS.",
     image: "https://picsum.photos/600/400?random=10",
-    tech: ["Next.js", "D3.js", "Tailwind"],
-    github: "#",
-    live: "#"
+    tech: ["React", "Framer Motion", "TypeScript","Tailwind","Formsfree"],
+    github: "https://github.com/Anmol2004k/the-creationedit.git",
+    live: "https://thecreationedit.com"
   },
   {
-    title: "Eco-Stream",
-    description: "Collaborative environmental tracking tool with global heatmaps.",
+    title: "Property Delear",
+    description: "A responsive website for a Property Dealer, built with React and Tailwind CSS.",
     image: "https://picsum.photos/600/400?random=11",
-    tech: ["React", "PostgreSQL", "Node.js"],
-    github: "#",
+    tech: ["React", "PostgreSQL", "Node.js","Framer Motion", "Tailwind"],
+    github: "https://github.com/Anmol2004k/Numberdar-properties.git",
     live: "#"
   },
   {
-    title: "Lumina Marketplace",
-    description: "Premium NFT marketplace with lightning-fast transaction speeds.",
+    title: "Teaching-Institute",
+    description: "A responsive website for a Teaching Institute, built with React and Tailwind CSS.",
     image: "https://picsum.photos/600/400?random=12",
-    tech: ["Solidity", "TypeScript", "Ether.js"],
-    github: "#",
-    live: "#"
+    tech: ["React", "TypeScript", "Framer-Motion", "Tailwind"],
+    github: "https://github.com/Anmol2004k/SRK_Skills-Center.git",
+    live: "https://srk-skills-center.vercel.app/"
+  },
+  {
+    title: "My-Portfolio",
+    description: "A responsive portfolio website built with React and Tailwind CSS.",
+    image: "https://picsum.photos/600/400?random=13",
+    tech: ["React", "TypeScript", "Framer-Motion", "Tailwind"],
+    github: "https://github.com/Anmol2004k/My_Portfolio.git",
+    live: "https://www.anmolkumar.in"
   }
 ];
 

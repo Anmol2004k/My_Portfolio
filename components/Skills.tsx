@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer, SiRedux, SiNodedotjs, SiExpress, SiPostgresql, SiMongodb, SiGraphql, SiFirebase, SiDocker, SiAmazon, SiGit, SiVercel, SiLinux, SiGithubactions } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer, SiRedux, SiNodedotjs, SiExpress,  SiMysql, SiMongodb,  SiPhp, SiFirebase, SiDocker, SiAmazon, SiGit, SiVercel, SiLinux, SiGithubactions } from 'react-icons/si';
 
 const skillGroups = [
   {
@@ -24,11 +24,11 @@ const skillGroups = [
     skills: [
       { name: "Node.js", icon: SiNodedotjs, props: { size: 24, color: "#339933" } },
       { name: "Express", icon: SiExpress, props: { size: 24, color: "#000000" } },
-      { name: "PostgreSQL", icon: SiPostgresql, props: { size: 24, color: "#4169E1" } },
+      { name: "PHP", icon: SiPhp, props: { size: 24, color: "#777BB4" } },
+      { name: "MySQL", icon: SiMysql, props: { size: 24, color: "#4479A1" } },
       { name: "MongoDB", icon: SiMongodb, props: { size: 24, color: "#47A248" } },
-      { name: "GraphQL", icon: SiGraphql, props: { size: 24, color: "#E10098" } },
       { name: "Firebase", icon: SiFirebase, props: { size: 24, color: "#FFCA28" } }
-    ]
+ ]
   },
   {
     category: "DevOps",

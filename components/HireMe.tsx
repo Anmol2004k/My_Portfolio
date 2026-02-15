@@ -42,7 +42,7 @@ const HireMe: React.FC = () => {
             <div className="mb-8">
               <h3 className="text-2xl font-bold mb-2">Daily Hire</h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-blue-500">₹1200</span>
+                <span className="text-4xl font-extrabold text-blue-500">₹2000</span>
                 <span className="text-gray-600 dark:text-gray-400 font-medium">/ 5 Hours</span>
               </div>
             </div>
