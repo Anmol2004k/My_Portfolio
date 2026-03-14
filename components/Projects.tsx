@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import creationImg from '../Assets/images/creation-edit.jpg'; 
 import propertyImg from '../Assets/images/property-dealer.jpg';
 import teachingImg from '../Assets/images/teaching.jpg';
-import portfolioImg from '../Assets/images/Dev.jpg'; 
+import portfolioImg from '../Assets/images/Anmolportfolio.jpg'; 
 
 const projects = [
   {
