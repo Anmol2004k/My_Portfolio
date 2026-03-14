@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import aboutImage from '../Assets/images/Dev.jpg';
 import creationImg from '../Assets/images/creation-edit.jpg'; 
 import propertyImg from '../Assets/images/property-dealer.jpg';
 import teachingImg from '../Assets/images/teaching.jpg';
