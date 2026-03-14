@@ -1,12 +1,17 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import aboutImage from '../Assets/images/Dev.jpg';
+import creationImg from '../Assets/images/creation-edit.jpg'; 
+import propertyImg from '../Assets/images/property-dealer.jpg';
+import teachingImg from '../Assets/images/teaching.jpg';
+import portfolioImg from '../Assets/images/Dev.jpg'; 
 
 const projects = [
   {
     title: "The-Creation-Edit",
     description: "A responsive website for An Editing Agency,built with React and Tailwind CSS.",
-    image: "https://picsum.photos/600/400?random=10",
+    image:  creationImg,
     tech: ["React", "Framer Motion", "TypeScript","Tailwind","Formsfree"],
     github: "https://github.com/Anmol2004k/the-creationedit.git",
     live: "https://thecreationedit.com"
@@ -14,15 +19,15 @@ const projects = [
   {
     title: "Property Delear",
     description: "A responsive website for a Property Dealer, built with React and Tailwind CSS.",
-    image: "https://picsum.photos/600/400?random=11",
+    image: propertyImg,
     tech: ["React", "PostgreSQL", "Node.js","Framer Motion", "Tailwind"],
     github: "https://github.com/Anmol2004k/Numberdar-properties.git",
-    live: "#"
+    live: "https://numberdarproperties.vercel.app/"
   },
   {
     title: "Teaching-Institute",
     description: "A responsive website for a Teaching Institute, built with React and Tailwind CSS.",
-    image: "https://picsum.photos/600/400?random=12",
+    image:  teachingImg,
     tech: ["React", "TypeScript", "Framer-Motion", "Tailwind"],
     github: "https://github.com/Anmol2004k/SRK_Skills-Center.git",
     live: "https://srk-skills-center.vercel.app/"
@@ -30,7 +35,7 @@ const projects = [
   {
     title: "My-Portfolio",
     description: "A responsive portfolio website built with React and Tailwind CSS.",
-    image: "https://picsum.photos/600/400?random=13",
+    image: portfolioImg,
     tech: ["React", "TypeScript", "Framer-Motion", "Tailwind"],
     github: "https://github.com/Anmol2004k/My_Portfolio.git",
     live: "https://www.anmolkumar.in"
