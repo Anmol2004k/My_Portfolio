@@ -1,4 +1,4 @@
-# Nova - Modern Developer Portfolio
+#   Anmol Kumar Full-Stack Developer Portfolio
 
 
 ## 📋 Brief Summary
@@ -128,25 +128,10 @@ npm run preview
 Built with ❤️ using React, TypeScript, and modern web technologies.
 
 
-{
-## Run Locally
-
-**Prerequisites:**  Node.js
-1. Install dependencies:
-   `npm install`
-2. Run the app:
-   `npm run dev`
-
-}
-
-
-Great! Your project builds successfully and the preview is running at http://localhost:4173/. Everything looks good for deployment.
  
- 6. Optional Enhancements
-SEO: Add meta tags in index.html
-Analytics: Add Google Analytics
-Contact Form: Use Netlify Forms or EmailJS
-Performance: Enable Vercel Analytics
-7. Test Your Live Site
-Check all links work
-Test on
+ 
+
+
+ 
+ 
+ 
