@@ -105,9 +105,9 @@ const Projects: React.FC = () => {
                 </div>
               </div>
               <div className="p-8 flex flex-col flex-grow">
-                <div className="flex gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map(t => (
-                    <span key={t} className="text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-400/10 px-2 py-1 rounded">
+                    <span key={t} className="text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-400/10 px-2 py-1.5 rounded-md border border-blue-400/20">
                       {t}
                     </span>
                   ))}
