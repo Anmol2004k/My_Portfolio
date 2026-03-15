@@ -5,6 +5,9 @@ import creationImg from '../Assets/images/creation-edit.jpg';
 import propertyImg from '../Assets/images/property-dealer.jpg';
 import teachingImg from '../Assets/images/teaching.jpg';
 import portfolioImg from '../Assets/images/Anmolportfolio.jpg'; 
+import transformerProjectImg from '../Assets/images/transformer-project.jpg';
+import  SundownStudiosImg from '../Assets/images/SundownStudios.jpg';
+ 
 
 const projects = [
   {
@@ -14,15 +17,23 @@ const projects = [
     tech: ["React", "Framer Motion", "TypeScript","Tailwind","Formsfree"],
     github: "https://github.com/Anmol2004k/the-creationedit.git",
     live: "https://thecreationedit.com"
+  },{
+    title: "My-Portfolio",
+    description: "A responsive portfolio website built with React and Tailwind CSS.",
+    image: portfolioImg,
+    tech: ["React", "TypeScript", "Framer-Motion", "Tailwind"],
+    github: "https://github.com/Anmol2004k/My_Portfolio.git",
+    live: "https://www.anmolkumar.in"
   },
-  {
-    title: "Property Delear",
-    description: "A responsive website for a Property Dealer, built with React and Tailwind CSS.",
-    image: propertyImg,
-    tech: ["React", "PostgreSQL", "Node.js","Framer Motion", "Tailwind"],
-    github: "https://github.com/Anmol2004k/Numberdar-properties.git",
-    live: "https://numberdarproperties.vercel.app/"
-  },
+  
+     {
+    title: "ElectroTrans Solutions",
+    description: "A high-performance industrial website for a transformer manufacturer, focusing on product cataloging and technical specifications.",
+    image: transformerProjectImg,  
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    github: "https://github.com",
+    live: "https://your-live-link.com"
+},
   {
     title: "Teaching-Institute",
     description: "A responsive website for a Teaching Institute, built with React and Tailwind CSS.",
@@ -31,14 +42,24 @@ const projects = [
     github: "https://github.com/Anmol2004k/SRK_Skills-Center.git",
     live: "https://srk-skills-center.vercel.app/"
   },
-  {
-    title: "My-Portfolio",
-    description: "A responsive portfolio website built with React and Tailwind CSS.",
-    image: portfolioImg,
-    tech: ["React", "TypeScript", "Framer-Motion", "Tailwind"],
-    github: "https://github.com/Anmol2004k/My_Portfolio.git",
-    live: "https://www.anmolkumar.in"
-  }
+  
+{
+    title: "Property Delear",
+    description: "A responsive website for a Property Dealer, built with React and Tailwind CSS.",
+    image: propertyImg,
+    tech: ["React", "PostgreSQL", "Node.js","Framer Motion", "Tailwind"],
+    github: "https://github.com/Anmol2004k/Numberdar-properties.git",
+    live: "https://numberdarproperties.vercel.app/"
+  },
+{
+    title: "Sundown Studios",
+    description: "A sleek, minimalist landing page for a modern interior design agency featuring smooth scroll animations and a masonry gallery.",
+    image: SundownStudiosImg,  
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    github: "https://github.com",
+    live: "https://your-live-link.com"
+}
+
 ];
 
 const Projects: React.FC = () => {
