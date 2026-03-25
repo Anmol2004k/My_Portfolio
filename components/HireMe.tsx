@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { loadStripe } from '@stripe/stripe-js';
 
 // 1. Stripe Initialize (Publishable Key ko .env.local mein zaroor rakhein)
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
-
+ // @ts-ignore
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string);
 const CheckIcon = () => (
   <svg className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -26,7 +26,9 @@ const HireMe: React.FC = () => {
         },
       ],
       mode: 'payment',
+      // Agar payment sahi rahi to user is page par jayega:
       successUrl: `${window.location.origin}/success`,
+      // Agar user ne payment beech mein cancel ki:
       cancelUrl: `${window.location.origin}/cancel`,
     }) ?? {};
 
