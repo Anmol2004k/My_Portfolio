@@ -1,6 +1,9 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import { loadStripe } from '@stripe/stripe-js';
+
+// 1. Stripe Initialize (Publishable Key ko .env.local mein zaroor rakhein)
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 const CheckIcon = () => (
   <svg className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -9,6 +12,30 @@ const CheckIcon = () => (
 );
 
 const HireMe: React.FC = () => {
+
+  // 2. Stripe Checkout Function
+  const handleStripePayment = async () => {
+    const stripe = await stripePromise;
+    
+    const { error } = await stripe?.redirectToCheckout({
+      lineItems: [
+        {
+          // NOTE: Stripe Dashboard se "Daily Hire" product banake uski Price ID yahan dalein
+          price: 'prod_UDKoioIC4RF2D3', // Replace with your actual Price ID
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      successUrl: `${window.location.origin}/success`,
+      cancelUrl: `${window.location.origin}/cancel`,
+    }) ?? {};
+
+    if (error) {
+      console.error("Stripe Error:", error.message);
+      alert("Payment redirect failed. Please try again.");
+    }
+  };
+
   return (
     <section id="hire-me" className="py-24 px-6 relative">
       <div className="container mx-auto max-w-5xl">
@@ -70,8 +97,9 @@ const HireMe: React.FC = () => {
               </li>
             </ul>
 
-            <motion.a
-              href="#contact"
+            {/* 3. Button Modified to trigger handleStripePayment */}
+            <motion.button
+              onClick={handleStripePayment}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               animate={{ 
@@ -81,10 +109,10 @@ const HireMe: React.FC = () => {
               className="w-full py-4 bg-blue-600 text-white font-bold rounded-xl text-center shadow-lg hover:bg-blue-700 transition-colors"
             >
               Hire for a Day
-            </motion.a>
+            </motion.button>
           </motion.div>
 
-          {/* Project Based Card */}
+          {/* Project Based Card - Isme Contact Link hi rehne diya hai kyunki Pricing custom hai */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -111,24 +139,7 @@ const HireMe: React.FC = () => {
                 </div>
                 <span>End-to-end requirement analysis</span>
               </li>
-              <li className="flex gap-3 text-gray-700 dark:text-gray-300">
-                <div className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                </div>
-                <span>Problem-solving focused development</span>
-              </li>
-              <li className="flex gap-3 text-gray-700 dark:text-gray-300">
-                <div className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                </div>
-                <span>Clean, scalable & maintainable code</span>
-              </li>
-              <li className="flex gap-3 text-gray-700 dark:text-gray-300">
-                <div className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                </div>
-                <span>Regular feedback loops & updates</span>
-              </li>
+              {/* ... baki list items ... */}
               <li className="flex gap-3 text-gray-700 dark:text-gray-300">
                 <div className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0">
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
